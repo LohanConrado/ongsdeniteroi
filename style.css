@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+:root {
+    --body-bg: #F5F5F5;
+    --header-bg: #FFFF;
+    --header-ul-color: #202024;
+    --card-bg: #FFFF;
+    --tag-color: #F5F5F5;
+    --busca-bg: #EEEEEE;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background: var(--body-bg);
+    margin: auto;
+    font-family: 'Mulish', sans-serif;
+    
+}
+
+header {
+    background: var(--header-bg);
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 17px;
+    font-size: 18px;
+}
+
+.nav li {
+    list-style: none;
+    color: var(--header-ul-color);
+}
+
+.pesquisa {
+    display: none;
+}
+
+.home {
+    padding: 20px;
+    font-size: 30px;
+    margin-top: 200px;
+    text-align: center;
+    line-height: 100px;
+}
+
+.homeG {
+    margin: auto;
+    padding: 20px;
+}
+
+.gal {
+    margin-top: 130px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.dentro{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    background: var(--card-bg);
+    border-radius: 10px;
+}
+
+@media (min-width: 700px) {
+    .galeria {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        
+    }
+
+    .pesquisa {
+        display: block;
+    }
+
+    #busca {
+        width: 400px;
+        height: 48px;
+        border: none;
+        border-radius: 8px;
+        background: var(--busca-bg);
+        padding: 20px;
+    }
+    
+}
+
+.dentro img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+
+.card .txt {
+    margin: 15px 25px;
+}
+
+.card .tag {
+    margin-left: 25px;
+    background-color: var(--tag-color);
+    width: 40px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+footer {
+    background: white;
+    text-align: center;
+    padding: 3px;
+    font-size: 13px;
+    font-style: italic;
+}
+
+
