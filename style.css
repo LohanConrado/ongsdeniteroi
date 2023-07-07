@@ -60,6 +60,7 @@ header {
 .homeG {
     margin: auto;
     padding: 20px;
+    margin-bottom: 50px;
 }
 
 .gal {
@@ -122,13 +123,8 @@ header {
     padding: 5px;
 }
 
-footer {
-    margin-top: 50px;
-    background: white;
-    text-align: center;
-    padding: 3px;
-    font-size: 13px;
-    font-style: italic;
-}
+
+
+
 
 
