@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 :root {
     --body-bg: #F5F5F5;
@@ -21,7 +20,9 @@ a {
 a:hover {
     text-decoration-color: rgba(0, 0, 0, 1);
 }
-
+main {
+    width: 100vw;
+}
 body {
     background: var(--body-bg);
     display: flex;
@@ -90,6 +91,7 @@ h2.conheca-ongs a {
     align-items: center;
     font-size: 1.5rem;
     padding: 2.5rem;
+    overflow-x: hidden;
 }
 
 .galeria {
@@ -146,6 +148,7 @@ section {
     padding: 3rem;
     width: 80vw;
     margin-bottom: 1.5rem;
+    overflow-x: hidden;
 }
 .swiper-slide.card {
     background: #f6f6f6;
