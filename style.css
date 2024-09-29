@@ -105,9 +105,10 @@ h2.conheca-ongs a {
 }
 .galeria .swiper-slide.card {
     margin-top: 2rem;
+    margin: 2rem auto;
+    max-width: 30rem;
     overflow-x: hidden;
 }
-
 /* .dentro{
     display: flex;
     flex-direction: column;
