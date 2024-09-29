@@ -72,6 +72,12 @@ header {
     justify-content: center;
     align-items: center;
 }
+h2.conheca-ongs {
+    font-size: 1.5rem;
+}
+h2.conheca-ongs a {
+    color: #202024;
+}
 
 .homeG {
     margin: auto;
@@ -87,32 +93,35 @@ header {
 }
 
 .conheca-ongs {
-    margin-top: 2rem;
+    margin-top: 1.2rem;
     text-align: center;
     margin-bottom: 0rem;
 }
+.galeria .swiper-slide.card {
+    margin-top: 2rem;
+}
 
-.dentro{
+/* .dentro{
     display: flex;
     flex-direction: column;
     margin-top: 50px;
     background: var(--card-bg);
     border-radius: 10px;
-}
+} */
 
-.dentro img {
+/* .dentro img {
     width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
-}
+} */
 
 
-.card .txt {
+/* .card .txt {
     margin: 15px 25px;
-}
+} */
 
-.card .tag {
+/* .card .tag {
     margin-left: 25px;
     background-color: var(--tag-color);
     width: 40px;
@@ -121,7 +130,7 @@ header {
     font-size: 12px;
     margin-bottom: 20px;
     padding: 5px;
-}
+} */
 
 /* CARD CARROUSEL */
 section {
@@ -288,15 +297,19 @@ section {
 }
 
 /* MAPA */
-
 section#section-mapa {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 0;
 }
 #section-mapa h2 {
     margin: 1rem;
+    font-size: 2rem;
+}
+#section-mapa h4 {
+    font-size: 1.2rem;
 }
 iframe {
     width: 100%;
@@ -305,7 +318,77 @@ iframe {
     margin: 1rem 0;
 }
 
+/* Contato */
+/* Formulario */
+.formulario {
+    background-color: #ececec;
+    padding: 1.4rem;
+    border-radius: 1rem;
+    margin-top: 2rem ;
+}
+.contato {
+    margin-top: 1rem;
+}
 
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height: auto;
+}
+.entrada  {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    height: 5rem;
+}
+.entrada input {
+    width: 60%;
+    height: 2rem;
+    border: 1px solid black;
+    border-radius: 0.2rem;
+    padding: 0.3rem;
+}
+.entrada-text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    height: auto;
+}
+.entrada-text textarea {
+    width: 100%;
+    height: 10rem;
+    border: 1px solid black;
+    border-radius: 0.2rem;
+    padding: 0.3rem;
+    resize: none;
+}
+form .buttonContainer {
+    width: 100%;
+    margin-top: 2rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttonContainer button {
+    height: 3rem;
+    width: 10rem;
+    border-radius: 0.2rem;
+    border: 1px solid black;
+    background: #4F4F4F ;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.4s ease;
+}
+.buttonContainer button:hover {
+    background: #343434 ;
+}
+label {
+    padding: 0 0 0.2rem 0;
+}
 /* Responsividade */
 @media (min-width: 1200px) {
     .galeria {
@@ -347,9 +430,55 @@ iframe {
         background-image: none;
     }
     h1 {
-        font-size: 2.5rem;
+        font-size: 2.0rem;
     }
     .nome h1 {
         font-size: 1.3rem;
+    }
+    .entrada label{
+        font-size: 1rem;
+    }
+    .entrada-text label {
+        font-size: 1rem
+    }
+    #section-mapa {
+        width: 80vw;
+    }
+    #section-mapa h2 {
+        font-size: 1.5rem;
+        width: 80vw;
+    }
+    #section-mapa h4 {
+        font-size: 1.2rem;
+        width: 80vw;
+    }
+    iframe {
+        width: 80vw;
+        height: 30rem;
+    }
+}
+
+@media (max-width: 460px) {
+    .nav img {
+        display: none;
+    }
+    .home section {
+        width: 90vw;
+        margin-bottom: 0;
+    }
+    #section-mapa {
+        width: 80vw;
+    }
+    #section-mapa h2 {
+        font-size: 1.5rem;
+        width: 80vw;
+    }
+    #section-mapa h4 {
+        font-size: 1.2rem;
+        width: 80vw;
+    }
+    iframe {
+        width: 80vw;
+        height: 30rem;
     }
 }

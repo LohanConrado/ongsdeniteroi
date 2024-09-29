@@ -10,29 +10,52 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
 
+    <!-- Scripts -->
+    <script src="Scripts/Swiper.js" defer></script>
+    <script src="Scripts/Buttons.js" defer></script>
+
+
 </head>
 <body>
     <main>
         <header> 
             <div class="menu">
                 <ul class="nav">
-                    <img src="./assets/site-logo.svg" alt="Camera">
+                    <img src="./assets/site-logo.svg" alt="ongsdeniteroi-logo">
                     <a href="./index.html"><li><strong>Início</strong></li></a>
                     <a href="./galeria.html"><li>Projetos e Ongs</li></a>
                     <a href="./formulario.html"><li><strong>Contato</strong></li></a>
-    
-                    <div class="pesquisa">
-                        <input type="text" name="busca" id="busca" placeholder="Pesquise por imagens e coleções">
-                    </div>
                 </ul>
             </div>
         </header>
 
         <div class="home">
-            <h1 class="gal">
-                Conheça as <strong>ONGs</strong>
+            <h1 class="contato">
+                Entre em contato
             </h1>
-                
+            <div class="formulario">
+                <form action="https://formspree.io/f/xpwavjpn" method="POST">
+                    <div class="entrada">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" placeholder="Nome e sobrenome" required>
+                    </div>
+                    
+                    <div class="entrada">
+                        <label for="email">Endereço de Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Seu melhor email" required>
+                    </div>
+                  
+                    <div class="entrada-text">
+                        <label for="message">Texto:</label>
+                        <textarea id="message" name="message" rows="4" cols="50" placeholder="Escreva aqui o motivo do contato" required></textarea>
+                    </div>
+                    <div class="buttonContainer">
+                        <button type="submit">Enviar</button>
+                    </div>
+                    
+                  </form>
+                  
+            </div>
         </div>
     </main>
     
