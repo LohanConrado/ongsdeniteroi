@@ -36,11 +36,13 @@ header {
     background: var(--header-bg);
     width: 100vw;
     height: 80px;
+    overflow-x: hidden;
 }
 .menu {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
     height: 100%;
 }
 .nav {
@@ -49,6 +51,7 @@ header {
     align-items: center;
     width: 80vw;
     font-size: 18px;
+    overflow-x: hidden;
 }
 
 .nav li {
@@ -71,6 +74,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 h2.conheca-ongs {
     font-size: 1.5rem;
@@ -99,6 +103,7 @@ h2.conheca-ongs a {
 }
 .galeria .swiper-slide.card {
     margin-top: 2rem;
+    overflow-x: hidden;
 }
 
 /* .dentro{
