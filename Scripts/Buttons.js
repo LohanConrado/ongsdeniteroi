@@ -8,7 +8,8 @@ const links = {
     classifigatosrj: '',
     peludosderua: '',
     casadocaoegato: 'https://www.casadocaoegatorj.com/',
-    adamaniteroi: 'https://www.adama.org.br/'
+    adamaniteroi: 'https://www.adama.org.br/',
+    fenaseprojetoviver: 'https://www.fenase.org.br/'
 }
 
 function abrirLinkSite(url) {
