@@ -93,7 +93,11 @@ h2.conheca-ongs a {
     padding: 2.5rem;
     overflow-x: hidden;
 }
-
+.homeG h2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
 .galeria {
     width: 80vw;
 }
