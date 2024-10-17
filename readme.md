@@ -1,0 +1,1 @@
+Projeto do site ONGs de Niterói, focado na divulgação de ONGs e Projetos em nossa cidade, com o objetivo de aumentar a visibilidade e o alcance.
