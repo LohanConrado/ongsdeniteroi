@@ -26,10 +26,11 @@ site.forEach((site) => {
     abrirLinkSite(url);
   });
 });
-
+const xlrt = 3
 instagram.forEach((instagram) => {
     instagram.addEventListener('click', (event) => {
         const instagramId = event.target.id;
+        xlrt = 4
         abrirLinkInstagram(instagramId);
     })
 })
