@@ -1,23 +1,27 @@
-function contarAcessosUnicos() {
-    const uniqueVisitorsKey = 'uniqueVisitors'; // Chave para armazenar os visitantes únicos
-    let uniqueVisitors = JSON.parse(localStorage.getItem(uniqueVisitorsKey)) || []; // Obtém a lista de visitantes únicos ou cria uma nova lista
-
-    // Verifica se o visitante atual já foi registrado
-    const currentVisitorId = localStorage.getItem('visitorId');
-    if (!currentVisitorId) {
-        // Se não existir, gera um novo ID único para o visitante
-        const newVisitorId = 'visitor-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
-        localStorage.setItem('visitorId', newVisitorId); // Armazena o ID do visitante no localStorage
-
-        // Adiciona o novo ID à lista de visitantes únicos
-        uniqueVisitors.push(newVisitorId);
-        localStorage.setItem(uniqueVisitorsKey, JSON.stringify(uniqueVisitors)); // Atualiza a lista no localStorage
+function countUniqueVisits() {
+    // Verifica se o visitante já foi registrado
+    if (!localStorage.getItem('uniqueVisitor')) {
+        // Se não, registra o visitante
+        localStorage.setItem('uniqueVisitor', 'true');
+        incrementUniqueVisitorCount();
     }
-
-    // Retorna a quantidade total de acessos únicos
-    return uniqueVisitors.length; // O número total de visitantes únicos
 }
 
+function incrementUniqueVisitorCount() {
+    // Incrementa o contador de visitantes únicos no armazenamento local
+    let count = parseInt(localStorage.getItem('uniqueVisitorCount')) || 0;
+    localStorage.setItem('uniqueVisitorCount', count + 1);
+}
+
+// Chama a função ao carregar a página
+countUniqueVisits();
+
+// Função para obter o número de visitantes únicos
+function getUniqueVisitorCount() {
+    return localStorage.getItem('uniqueVisitorCount') || 0;
+}
+
+countUniqueVisits();
 // Exemplo de uso
-const numeroAcessosUnicos = contarAcessosUnicos();
+const numeroAcessosUnicos = getUniqueVisitorCount();
 document.getElementById('contador').innerText = numeroAcessosUnicos

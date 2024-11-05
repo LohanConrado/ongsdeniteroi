@@ -248,7 +248,7 @@ section {
 }
 .buttons .site {
     background: #4F4F4F;
-    background-image: url(/assets/site-arrow.svg);
+    background-image: url(assets/site-arrow.svg);
     background-repeat: no-repeat;
     background-size: 1.5rem 1.5rem;
     background-position: 25% 50%;
@@ -259,7 +259,7 @@ section {
 }
 .buttons .site:hover {
     background: #343434;
-    background-image: url(/assets/site-arrow.svg);
+    background-image: url(assets/site-arrow.svg);
     background-repeat: no-repeat;
     background-size: 1.5rem 1.5rem;
     background-position: 25% 50%;
@@ -267,7 +267,7 @@ section {
 .site.none {
     pointer-events: none;
     background: rgba(79, 79, 79, 0.466);
-    background-image: url(/assets/site-arrow.svg);
+    background-image: url(assets/site-arrow.svg);
     background-repeat: no-repeat;
     background-size: 1.5rem 1.5rem;
     background-position: 25% 50%;
@@ -276,7 +276,7 @@ section {
 }
 .buttons .instagram {
     background: #4f4f4f;
-    background-image: url(/assets/instagram.png);
+    background-image: url(assets/instagram.png);
     background-repeat: no-repeat;
     background-size: 1.5rem 1.5rem;
     background-position: 10% 50%;
@@ -287,7 +287,7 @@ section {
 }
 .buttons .instagram:hover {
     background: #343434;
-    background-image: url(/assets/instagram.png);
+    background-image: url(assets/instagram.png);
     background-repeat: no-repeat;
     background-size: 1.5rem 1.5rem;
     background-position: 10% 50%;
@@ -295,7 +295,7 @@ section {
 .instagram.none {
     pointer-events: none;
     background: rgba(79, 79, 79, 0.966);
-    background-image: url(/assets/instagram.png);
+    background-image: url(assets/instagram.png);
     background-repeat: no-repeat;
     background-size: 1.5rem 1.5rem;
     background-position: 10% 50%;
@@ -485,7 +485,9 @@ label {
 }
 
 @media (max-width: 460px) {
-    
+    .visualizacoes {
+        display: none;
+    }
     .home section {
         width: 90vw;
         margin-bottom: 0;
