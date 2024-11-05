@@ -54,6 +54,16 @@ header {
     font-size: 18px;
     overflow-x: hidden;
 }
+.visualizacoes {
+    display: flex;
+    align-items: center;
+}
+.visualizacoes img {
+    margin-right: 1rem;
+}
+.visualizacoes h2 {
+    font-size: 1.4rem;
+}
 
 .nav li {
     list-style: none;
