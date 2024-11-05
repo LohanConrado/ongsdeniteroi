@@ -12,7 +12,7 @@ function contarAcessosUnicos() {
     const uniqueVisitors = new Set(JSON.parse(localStorage.getItem(uniqueVisitorsKey)) || []);
 
     // Adiciona o ID do visitante atual ao conjunto
-    uniqueVisitors.add(currentVisitorId || newVisitorId);
+    uniqueVisitors.add(localStorage.getItem('visitorId')); // Garante que o ID do visitante seja único
 
     // Armazena o conjunto atualizado no localStorage
     localStorage.setItem(uniqueVisitorsKey, JSON.stringify(Array.from(uniqueVisitors)));
