@@ -1,24 +1,18 @@
 function contarAcessosUnicos() {
     const uniqueVisitorsKey = 'uniqueVisitors'; // Chave para armazenar os visitantes únicos
-    const currentVisitorId = localStorage.getItem('visitorId'); // Obtém o ID do visitante atual
+    const visitorsSet = JSON.parse(localStorage.getItem(uniqueVisitorsKey)) || new Set(); // Obtém o conjunto de visitantes únicos ou cria um novo conjunto
 
-    // Se o visitante não tiver um ID, cria um novo ID
-    if (!currentVisitorId) {
-        const newVisitorId = 'visitor-' + Date.now(); // Gera um ID único baseado no timestamp
-        localStorage.setItem('visitorId', newVisitorId); // Armazena o ID do visitante
-    }
+    // Gera um ID único baseado no timestamp e em um número aleatório
+    const newVisitorId = 'visitor-' + Date.now() + '-' + Math.floor(Math.random() * 1000); 
 
-    // Recupera o conjunto de visitantes únicos armazenados
-    const uniqueVisitors = new Set(JSON.parse(localStorage.getItem(uniqueVisitorsKey)) || []);
-
-    // Adiciona o ID do visitante atual ao conjunto
-    uniqueVisitors.add(localStorage.getItem('visitorId')); // Garante que o ID do visitante seja único
+    // Adiciona o novo ID ao conjunto
+    visitorsSet.push(newVisitorId);
 
     // Armazena o conjunto atualizado no localStorage
-    localStorage.setItem(uniqueVisitorsKey, JSON.stringify(Array.from(uniqueVisitors)));
+    localStorage.setItem(uniqueVisitorsKey, JSON.stringify(visitorsSet));
 
-    // Retorna a quantidade de acessos únicos
-    return uniqueVisitors.size;
+    // Retorna a quantidade total de acessos únicos
+    return visitorsSet.length; // O número total de visitantes únicos
 }
 
 // Exemplo de uso

@@ -424,14 +424,14 @@ label {
         display: block;
     }
 
-    #busca {
+    /* #busca {
         width: 400px;
         height: 48px;
         border: none;
         border-radius: 8px;
         background: var(--busca-bg);
         padding: 20px;
-    }
+    } */
     
 }
 
@@ -448,6 +448,9 @@ label {
 }
 
 @media (max-width: 600px) {
+    .visualizacoes {
+        display: none;
+    }
     .buttons .site,
     .buttons .instagram {
         background-image: none;
@@ -482,9 +485,7 @@ label {
 }
 
 @media (max-width: 460px) {
-    .nav img {
-        display: none;
-    }
+    
     .home section {
         width: 90vw;
         margin-bottom: 0;
