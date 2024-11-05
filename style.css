@@ -64,6 +64,15 @@ header {
 .visualizacoes h2 {
     font-size: 1.4rem;
 }
+.visualizacoes div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.visualizacoes div img {
+    height: 1.5rem;
+    width: auto;
+}
 
 .nav li {
     list-style: none;
