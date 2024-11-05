@@ -1,54 +1,51 @@
-// Define o ID do cliente OAuth 2.0 obtido do Google Cloud Console
-const ID_CLIENTE = 'SEU_CLIENT_ID.apps.googleusercontent.com'; // Substitua pelo seu Client ID
+// Função para obter websites e a quantidade de visualizações para o primeiro website
+async function obterDados(apiKey) {
+    const urlWebsites = 'https://api.umami.is/v1/websites';
 
-// Define o escopo de acesso para leitura de dados do Google Analytics
-const ESCOPO = 'https://www.googleapis.com/auth/analytics.readonly';
-
-// Função que carrega a biblioteca do cliente do Google API
-function carregarCliente() {
-    // Carrega os módulos 'client' e 'auth2' da API do Google
-    gapi.load('client:auth2', inicializarCliente);
-}
-
-// Função que inicializa o cliente do Google API com as credenciais do usuário
-function inicializarCliente() {
-    gapi.client.init({
-        clientId: ID_CLIENTE, // Configura o ID do cliente para autenticação
-        scope: ESCOPO        // Define o escopo para acessar os dados do Google Analytics
-    }).then(() => {
-        // Após a inicialização, realiza o login do usuário
-        gapi.auth2.getAuthInstance().signIn().then(() => {
-            // Após o login bem-sucedido, chama a função para consultar os relatórios
-            consultarRelatorios();
+    try {
+        const resposta = await fetch(urlWebsites, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'x-umami-api-key': apiKey
+            }
         });
-    });
-}
 
-// Função que consulta os relatórios do Google Analytics
-function consultarRelatorios() {
-    gapi.client.request({
-        path: '/v4/reports:batchGet', // Caminho da API para obter relatórios em lote
-        root: 'https://analyticsreporting.googleapis.com/', // URL base da API de relatórios
-        method: 'POST', // Método HTTP para enviar a solicitação
-        body: {
-            reportRequests: [
-                {
-                    viewId: 'G-3922PQ7M6F', // View ID do Google Analytics
-                    dateRanges: [{ endDate: 'today' }], // Período: Desde o início
-                    metrics: [{ expression: 'ga:users' }] // Métrica de usuários únicos (ga:users)
-                }
-            ]
+        if (!resposta.ok) {
+            throw new Error('Erro na requisição: ' + resposta.status);
         }
-    }).then(response => {
-        // Processa a resposta da API e extrai o número de usuários únicos
-        const resultado = response.result.reports[0].data.totals[0].values[0];
-        // Atualiza o elemento HTML com o número de usuários únicos
-        document.getElementById('contador').textContent = resultado;
-    }, erro => {
-        // Exibe um erro no console se a solicitação falhar
-        console.error('Erro ao obter os dados:', erro);
-    });
+
+        const websites = await resposta.json(); // Converte a resposta em JSON
+        console.log(websites); // Exibe os websites no console
+
+        if (websites.length > 0) {
+            const websiteId = websites[0].id; // Pega o ID do primeiro website
+            const urlPageviews = `https://api.umami.is/v1/websites/${websiteId}/pageviews`;
+
+            const respostaPageviews = await fetch(urlPageviews, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                    'x-umami-api-key': apiKey
+                }
+            });
+
+            if (!respostaPageviews.ok) {
+                throw new Error('Erro na requisição de pageviews: ' + respostaPageviews.status);
+            }
+
+            const pageviews = await respostaPageviews.json();
+            document.getElementById('contador').innerText = pageviews; // Mostra a quantidade de visualizações
+
+        } else {
+            console.log('Nenhum website encontrado.');
+        }
+
+    } catch (error) {
+        console.error('Erro ao buscar dados:', error);
+    }
 }
 
-// Aguarda o carregamento completo da página antes de carregar o cliente do Google API
-document.addEventListener("DOMContentLoaded", carregarCliente);
+// Chame a função com a chave da API
+const apiKey = 'LZQDhaw89Phn10wlaQWFq3jTujFeqsY6'; // chave da API
+obterDados(apiKey);
